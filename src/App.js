@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React from 'react';
+import { DataProvider } from './Context/DataContext';
+import './App.css'
+import SnowboardList from './Components/Snowboard/SnowboardList';
+import Snowboard from './Components/Snowboard/Snowboard';
+import AddSnowboard from './Components/Snowboard/AddSnowboard';
+import EditSnowboard from './Components/Snowboard/EditSnowboard';
+import Header from './Components/Views/Header'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+const App = () => {
+
+
+  return(
+
+    <DataProvider>
+      <Header/>
+      <Router>
+          <Switch>
+            <Route exact path="/">
+              <SnowboardList/>
+            </Route>
+            <Route path='/snowboard'>
+              <Snowboard/>
+            </Route>
+            <Route path='/add'>
+              <AddSnowboard/>
+            </Route>
+            <Route path='/edit'>
+              <EditSnowboard/>
+            </Route>
+          </Switch>
+      </Router>
+  </DataProvider>
+  
+  )
+
+
 }
+
 
 export default App;
