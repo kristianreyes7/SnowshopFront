@@ -7,11 +7,16 @@ const Snowboard = (props) => {
     // console.log(location.state.sb)
     const refreshData = useRefreshData();
     const history = useHistory();
+    
+
+
+    
     const thisSnowboard = useData().snowboard.filter(snowboard => snowboard.id === location.state.sb.id);
   
     return (
         <Fragment>
             <div className="container-fluid snowboardView">
+            
             {thisSnowboard.map((snowboard, i) => {
               return (
                 <div key={i} className="card" style={{width: "75vw", height: "65vh"}}>
@@ -30,6 +35,7 @@ const Snowboard = (props) => {
                             pathname: '/edit/' + snowboard.id ,
                             state: {sb: snowboard}
                     }}>Edit</Link>
+
                 </div>
               )
             })}

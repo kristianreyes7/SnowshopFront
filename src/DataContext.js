@@ -15,10 +15,13 @@ export const useRefreshData = () => {
 
 
 export const DataProvider = ({ children }) => {
-    const [snowboard, setSnowboards] = useState([])
+    const [snowboard, setSnowboards] = useState([]);
+
     let data = {
         snowboard: snowboard,
     }
+
+
 
     const refreshData = () => {
         axios.get('https://out-cold.herokuapp.com/snowboards')
