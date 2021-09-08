@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+$fjalla-font: 'Fjalla One', sans-serif;
+$header-color: #81968F;
+$blue-color: #96BDC6;
+@mixin set-hover(){
+    text-decoration: underline;
+    transform: scale(.98);
+    color: rgb(80, 76, 76);
+    text-shadow: 1px 1px $blue-color;
+}
+.header{
+    margin: 2px;
+    padding: 5px;
+    .headerNav{
+        padding: 5px;
+    }
+    background-color: $header-color;
+    .brand{
+        margin-left: 25px;
+        font-family: $fjalla-font;
+        font-size: 25px; 
+    }
+    .brand:hover{
+        @include set-hover;
+    }
+    .homeBtn:hover{
+        @include set-hover();
+    }
+    .addBtn:hover{
+        @include set-hover();
+    }
+}
+
+.showPage{
+    margin: 2px;
+    background-color: $blue-color;
+    padding: 15px;
+    .sbcol{
+        padding: 10px;
+    }
+    .sbcol:hover{
+        @include set-hover();
+        text-shadow: none;
+        text-decoration: none;
+        box-shadow: 0 .5rem 1rem rgba(black, .20);
+    }
+}
+
+.snowboardView{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65vh;
+    background-color: $blue-color;
+    .cBody{
+        background-color: $header-color;
+    }
+}
+.editPage{
+    background-color: $blue-color;
+    padding: 15px;
+    font: $fjalla-font;
+   
+}

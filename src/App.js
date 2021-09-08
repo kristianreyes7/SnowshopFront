@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import React from 'react';
 import { DataProvider } from './Context/DataContext';
-import './App.css'
+import './Components/CSS/main.css'
 import SnowboardList from './Components/Snowboard/SnowboardList';
 import Snowboard from './Components/Snowboard/Snowboard';
 import AddSnowboard from './Components/Snowboard/AddSnowboard';

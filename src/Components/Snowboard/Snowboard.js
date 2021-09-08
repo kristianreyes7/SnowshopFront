@@ -15,27 +15,24 @@ const Snowboard = (props) => {
   
     return (
         <Fragment>
-            <div className="container-fluid snowboardView">
+            <div className="mt-2 container-fluid snowboardView">
             
             {thisSnowboard.map((snowboard, i) => {
               return (
-                <div key={i} className="card" style={{width: "75vw", height: "65vh"}}>
-                    <img src={snowboard.url} alt={snowboard.name} className="card-img-top"/>
-                    <div className="card-body">
+                <div key={i} className="card main box-shadow" style={{width: "55vw", height: "65vh"}}>
+                    <img src={snowboard.url} alt={snowboard.name} className="card-img-top "/>
+                    <div className="card-body cBody">
                         <h1 className="card-title">{snowboard.company} {snowboard.name}</h1>
                         <p className="card-text">{snowboard.description}</p>
+                        <ul className="list-group list-group-flush">
+                            <li className="list-group-item">Price: ${snowboard.price}</li>
+                            <li className="list-group-item mt-1">Quantity: {snowboard.quantity}</li>                       
+                        </ul>
+                        <Link className="btn mt-2 card-link btn-warning editBtn float-end" to={{
+                                pathname: '/edit/' + snowboard.id ,
+                                state: {sb: snowboard}
+                        }}>Edit</Link>
                     </div>
-                    <ul className="list-group list-group-flush">
-                        <li className="list-group-item">Price: ${snowboard.price}</li>
-                        <li className="list-group-item">Quantity: {snowboard.quantity}</li>
-                    
-                    
-                    </ul>
-                     <Link className="btn card-link btn-warning" to={{
-                            pathname: '/edit/' + snowboard.id ,
-                            state: {sb: snowboard}
-                    }}>Edit</Link>
-
                 </div>
               )
             })}

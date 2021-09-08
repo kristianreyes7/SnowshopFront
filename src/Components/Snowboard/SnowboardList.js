@@ -36,15 +36,16 @@ const SnowboardList = props => {
  
     return (
         <Fragment>
-            <div className="container-fluid mt-5">
-                <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 gy-2">
+            <div className="container-fluid mt-2 showPage">
+                <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 gx-1 gy-2">
                     {snowboards.map((sb, i) => {
                         return(
                                 <div className="col " key={sb.id} >
-                                    <div className="card" style={{width: "18rem"}}>
+                                    <div className="card sbcol" style={{width: "18rem"}}>
                                         <img src={sb.url} className="card-img-top sbCard"  alt={sb.name} onClick={e => showPage(e, sb.id, sb)}/>
                                         <div className="card-body" >
                                             <h5 className="card-title">{sb.company}</h5>
+                                            <h5 className="card-title">{sb.name}</h5>
                                             <p className="card-text">Price: ${sb.price}</p>
                                             <p className="card-text">In Stock: {sb.quantity}</p>
                                             {/* <input 

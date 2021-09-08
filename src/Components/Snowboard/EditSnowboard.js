@@ -47,7 +47,7 @@ const EditSnowboard = (props) => {
 
 
     return (
-        <div className="container-fluid">
+        <div className="container-fluid mt-3 editPage">
             <form onSubmit={handleSubmit}>
 
             <label htmlFor="company">Company: </label><br/>
@@ -55,7 +55,7 @@ const EditSnowboard = (props) => {
                 type="text"
                 name="company"
                 value={snowboard.company}
-                className="form-control"
+                className="form-control mt-1 inputBox box-shadow"
                 onChange={handleChange}
             />
 
@@ -67,7 +67,7 @@ const EditSnowboard = (props) => {
                 type="text"
                 name="name"
                 value={snowboard.name}
-                className="form-control"
+                className="form-control mt-1 inputBox box-shadow"
                 onChange={handleChange}
             />
 
@@ -79,7 +79,7 @@ const EditSnowboard = (props) => {
                 type="text"
                 name="price"
                 value={snowboard.price}
-                className="form-control"
+                className="form-control mt-1 inputBox box-shadow"
                 onChange={handleChange}
             />
 
@@ -91,7 +91,7 @@ const EditSnowboard = (props) => {
                 type="text"
                 name="description"
                 value={snowboard.description}
-                className="form-control"
+                className="form-control mt-1 inputBox descriptionbox-shadow"
                 onChange={handleChange}
             />
 
@@ -103,7 +103,7 @@ const EditSnowboard = (props) => {
                 type="text"
                 name="url"
                 value={snowboard.url}
-                className="form-control"
+                className="form-control mt-1 inputBox box-shadow"
                 onChange={handleChange}
             />
 
@@ -115,7 +115,7 @@ const EditSnowboard = (props) => {
                 type="text"
                 name="quantity"
                 value={snowboard.quantity}
-                className="form-control"
+                className="form-control mt-1 inputBox box-shadow"
                 onChange={handleChange}
             />
 
@@ -124,7 +124,7 @@ const EditSnowboard = (props) => {
 
             <input 
                 type="submit"
-                className="btn btn-primary"
+                className="btn mr-4 btn-primary"
                 value='Edit' />
             
             <button className='btn btn-danger' onClick={e => handleDelete(e, snowboard.id)}>Delete</button>                                             
